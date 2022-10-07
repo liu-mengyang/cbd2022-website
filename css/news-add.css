@@ -1,0 +1,155 @@
+/*!
+ * Start Bootstrap - SB Admin 2 v3.3.7+1 (http://startbootstrap.com/template-overviews/sb-admin-2)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+.cbd-list {
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  padding: 10px;
+  width: 300px;
+  height: auto;
+  z-index: 10000;
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+.location-hotel {
+  position: absolute;
+  left: 270px;
+  padding: 20px;
+  margin-top: 60px;
+  width: 300px;
+  height: 240px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.hotel-info {
+  padding: 0px;
+  width: 100%;
+  height: auto;
+  clear: both;
+}
+.hotel-info li {
+  width: 100%;
+  line-height: 30px;
+  font-size: 14px;
+  text-align: left;
+}
+.location-hotels {
+  position: absolute;
+  left: 100px;
+  padding: 20px;
+  margin-top: 320px;
+  width: 300px;
+  height: 240px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.new-list {
+  padding: 0px;
+  width: 100%;
+  height: auto;
+  clear: both;
+}
+.new-list .new-titles {
+  float: left;
+  width: 100%;
+  display: block;
+  line-height: 30px;
+  font-size: 14px;
+  text-align: left;
+  height: auto;
+}
+.new-title {
+  padding: 4px;
+  line-height: 30px;
+}
+.new-time {
+  float: right;
+  line-height: 30px;
+  font-size: 14px;
+}
+.new_new {
+  color: #f00;
+}
+.icon-fork {
+  float: right;
+  width: 19px;
+  height: 19px;
+}
+.combine {
+  float: left;
+}
+.bottom {
+  border-bottom: 1px solid #999;
+  cursor: pointer;
+}
+.looked {
+  color: #eb6100;
+}
+.bottoms {
+  border-bottom: 1px solid #999;
+  cursor: pointer;
+}
+.down {
+  color: #333;
+}
+.down:hover {
+  color: #d14836;
+}
+.map_info {
+  font-size: 14px;
+  color: #333;
+  line-height: 25px;
+}
+.hr {
+  margin: 5px 0px;
+  width: 100%;
+  border: 3px solid #000;
+}
+.hotel-name {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  color: #FF8000;
+  line-height: 40px;
+}
+.hotel-address {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  line-height: 30px;
+}
+.hotel-contact {
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  color: #333;
+  line-height: 30px;
+}
+.hotel-description {
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  color: #333;
+  line-height: 30px;
+}
+.Description {
+  font-weight: bold;
+}
+.hotel-img {
+  margin: 0 auto;
+  display: block;
+}
+.align-paddng .ffc-hotel {
+  margin: 0 auto;
+  display: bolck;
+}
+.clear {
+  clear: both;
+}
