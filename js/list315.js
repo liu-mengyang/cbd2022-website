@@ -89,7 +89,7 @@ function showCall(day) {
 }
 
 function queryPartner() {
-    getCurrentPosition();
+    // getCurrentPosition();
     $(window).scroll(function (event) {
         var clientY = $("#header").offset().top - $(window).scrollTop();
         var scrollTop = $(window).scrollTop();
@@ -142,160 +142,160 @@ function queryPartner() {
 }
 
 
-function showMap() {
-    var point2 = new BMap.Point(108.91882349465178, 34.15899016687336);
-    var map1 = new BMap.Map("schoolmap");
-    map1.centerAndZoom(point2, 16);
-    //map1.enableScrollWheelZoom(false);
-    var myIcon = new BMap.Icon("images/ding.png", new BMap.Size(20, 20));
-    var mk1 = new BMap.Marker(point2, {icon: myIcon});
-    // map1.addOverlay(mk1);
-    map1.panTo(point2);
-    map1.centerAndZoom(point2, 16);
-    var top_left_control1 = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
-    var top_left_navigation1 = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
-    map1.addControl(top_left_control1);
-    map1.addControl(top_left_navigation1);
-    // map1.enableScrollWheelZoom(false);     //开启鼠标滚轮缩放 false关闭
-    // map1.addControl(new BMap.OverviewMapControl());  //显示缩略图
+// function showMap() {
+//     var point2 = new BMap.Point(108.91882349465178, 34.15899016687336);
+//     var map1 = new BMap.Map("schoolmap");
+//     map1.centerAndZoom(point2, 16);
+//     //map1.enableScrollWheelZoom(false);
+//     var myIcon = new BMap.Icon("images/ding.png", new BMap.Size(20, 20));
+//     var mk1 = new BMap.Marker(point2, {icon: myIcon});
+//     // map1.addOverlay(mk1);
+//     map1.panTo(point2);
+//     map1.centerAndZoom(point2, 16);
+//     var top_left_control1 = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+//     var top_left_navigation1 = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+//     map1.addControl(top_left_control1);
+//     map1.addControl(top_left_navigation1);
+//     // map1.enableScrollWheelZoom(false);     //开启鼠标滚轮缩放 false关闭
+//     // map1.addControl(new BMap.OverviewMapControl());  //显示缩略图
 
-    //缩略图
-    var mapType1 = new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP]});
-    var mapType2 = new BMap.MapTypeControl({anchor: BMAP_ANCHOR_TOP_LEFT});
-    var overView = new BMap.OverviewMapControl();
-    var overViewOpen = new BMap.OverviewMapControl({isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT});
+//     //缩略图
+//     var mapType1 = new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP]});
+//     var mapType2 = new BMap.MapTypeControl({anchor: BMAP_ANCHOR_TOP_LEFT});
+//     var overView = new BMap.OverviewMapControl();
+//     var overViewOpen = new BMap.OverviewMapControl({isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT});
 
-    map1.addControl(mapType1);          //2D图，卫星图
-    // map1.addControl(mapType2);       //左上角，默认地图控件
-    map1.setCurrentCity("西安");         //由于有3D图，需要设置城市哦
-    map1.addControl(overView);          //添加默认缩略地图控件
-    map1.addControl(overViewOpen);      //右下角，打开
+//     map1.addControl(mapType1);          //2D图，卫星图
+//     // map1.addControl(mapType2);       //左上角，默认地图控件
+//     map1.setCurrentCity("西安");         //由于有3D图，需要设置城市哦
+//     map1.addControl(overView);          //添加默认缩略地图控件
+//     map1.addControl(overViewOpen);      //右下角，打开
 
-    function show() {
-        $(".location-hotel").show();
-    }
+//     function show() {
+//         $(".location-hotel").show();
+//     }
 
-    function hide() {
-        $(".location-hotel").hide();
-    }
+//     function hide() {
+//         $(".location-hotel").hide();
+//     }
 
-    mk1.addEventListener("mouseover", show);
-    mk1.addEventListener("mouseout", hide);
-    //多个文字弹窗
-    var JI_html = "<p class='map_info'>Jiyuan International Hotel</p><p class='map_info'>" +
-        "Location: Jiyuan International Hotel</p><p class='map_info'> Contact: +86-13759911314</p>";
-    // var XI_html="<p class='map_info'>SHANGHAI XI TIANYOU HOTEL</p> <p class='map_info'>Location: No.827, Zhongshan West Road, Changning, Shanghai, China </p><p class='map_info'> Contact:  +86 21 6219 1100</p>";
-    var data_info = [
-        [108.91882349465178, 34.15899016687336, JI_html]];
-    var opts = {
-        width: 280,
-        overflow: "hidden",
-        title: "<h4>LOCATION</h4>",
-        enableMessage: true
-    };
-    for (var i = 0; i < data_info.length; i++) {
-        var marker = new BMap.Marker(new BMap.Point(data_info[i][0], data_info[i][1]), {icon: myIcon});  // 创建标注
-        var content = data_info[i][2];
-        map1.addOverlay(marker);               // 将标注添加到地图中
-        addClickHandler(content, marker);
-    }
+//     mk1.addEventListener("mouseover", show);
+//     mk1.addEventListener("mouseout", hide);
+//     //多个文字弹窗
+//     var JI_html = "<p class='map_info'>Jiyuan International Hotel</p><p class='map_info'>" +
+//         "Location: Jiyuan International Hotel</p><p class='map_info'> Contact: +86-13759911314</p>";
+//     // var XI_html="<p class='map_info'>SHANGHAI XI TIANYOU HOTEL</p> <p class='map_info'>Location: No.827, Zhongshan West Road, Changning, Shanghai, China </p><p class='map_info'> Contact:  +86 21 6219 1100</p>";
+//     var data_info = [
+//         [108.91882349465178, 34.15899016687336, JI_html]];
+//     var opts = {
+//         width: 280,
+//         overflow: "hidden",
+//         title: "<h4>LOCATION</h4>",
+//         enableMessage: true
+//     };
+//     for (var i = 0; i < data_info.length; i++) {
+//         var marker = new BMap.Marker(new BMap.Point(data_info[i][0], data_info[i][1]), {icon: myIcon});  // 创建标注
+//         var content = data_info[i][2];
+//         map1.addOverlay(marker);               // 将标注添加到地图中
+//         addClickHandler(content, marker);
+//     }
 
-    function addClickHandler(content, marker) {
-        marker.addEventListener("click", function (e) {
-                openInfo(content, e)
-            }
-        );
-    }
+//     function addClickHandler(content, marker) {
+//         marker.addEventListener("click", function (e) {
+//                 openInfo(content, e)
+//             }
+//         );
+//     }
 
-    function openInfo(content, e) {
-        var p = e.target;
-        var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
-        var infoWindow = new BMap.InfoWindow(content, opts);  // 创建信息窗口对象
-        map1.openInfoWindow(infoWindow, point); //开启信息窗口
-    }
-}
-
-
-function showMap1() {
-    var point2 = new BMap.Point(108.91710688088224, 34.1576051990611);
-    var map1 = new BMap.Map("schoolmap1");
-    map1.centerAndZoom(point2, 16);
-    //map1.enableScrollWheelZoom(false);
-    var myIcon = new BMap.Icon("images/ding.png", new BMap.Size(100, 55));
-    var mk1 = new BMap.Marker(point2, {icon: myIcon});
-    // map1.addOverlay(mk1);
-    map1.panTo(point2);
-    map1.centerAndZoom(point2, 16);
-    var top_left_control1 = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
-    var top_left_navigation1 = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
-    map1.addControl(top_left_control1);
-    map1.addControl(top_left_navigation1);
-    // map1.enableScrollWheelZoom(false);     //开启鼠标滚轮缩放 false关闭
-    // map1.addControl(new BMap.OverviewMapControl());  //显示缩略图
-    // 
-    //缩略图
-    var mapType1 = new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP]});
-    var mapType2 = new BMap.MapTypeControl({anchor: BMAP_ANCHOR_TOP_LEFT});
-    var overView = new BMap.OverviewMapControl();
-    var overViewOpen = new BMap.OverviewMapControl({isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT});
-
-    map1.addControl(mapType1);          //2D图，卫星图
-    map1.addControl(mapType2);          //左上角，默认地图控件
-    map1.setCurrentCity("西安");        //由于有3D图，需要设置城市哦
-    map1.addControl(overView);          //添加默认缩略地图控件
-    map1.addControl(overViewOpen);      //右下角，打开
-    function show() {
-        $(".location-hotel").show();
-    }
-
-    function hide() {
-        $(".location-hotel").hide();
-    }
-
-    mk1.addEventListener("mouseover", show);
-    mk1.addEventListener("mouseout", hide);
-    //多个文字弹窗
-    var JI_html = "<p class='map_info'>JI HOTEL Shanghai Hongqiao Zhongshan West Road </p> <p class='map_info'>Location：No.908 Zhongshan West Road, Changning, Shanghai,China</p><p class='map_info'> Contact： +86 21 5289 1395</p>";
-    // JI_html+="<p class='map_info'>Shanghai Xi Tianyou Hotel is located in Hongqiao’s Development Zone inside Donghua University campus, a 15-minute drive from Hongqiao Airport. Various dining and shopping options are available nearby. Rooms at Shanghai Xi Tianyou Hotel come with modern décor and large windows. Each room is fitted with a TV and wired internet. Shanghai Xi Tianyou Hotel is 4 km from the Shanghai Exhibition centre and 12 km from Shanghai Railway Station. </p>";
-    // JI_html+="<p class='map_info'>This property is also rated for the best value in Shanghai! Guests are getting more for their money when compared to other properties in this city.</p>";
-    var XI_html = "<p class='map_info'>SHANGHAI XI TIANYOU HOTEL</p> <p class='map_info'>Location: No.827, Zhongshan West Road, Changning, Shanghai, China </p><p class='map_info'> Contact:  +86 21 6219 1100</p>";
-    // XI_html+="<p class='map_info'>JI Hotel Shanghai Hongqiao Zhongshan West Road is situated in Shanghai, 10 km from Hongqiao Airport and Hongqiao Railway Station. The non-smoking property features an on-site restaurant. Free WiFi throughout the property.</p>";
-    // XI_html+="<p class='map_info'>Each room comes with a flat-screen TV with cable and satellite channels, ironing facilities and bottles of water. The attached bathroom has shower facilities and free toiletries. A hairdryer is available.</p>";
-    // XI_html+="<p class='map_info'>There is a 24-hour front desk and shops at the property. Fax, printing and copying facilities are available at the business centre.</p>";
-    // XI_html+="<p class='map_info'>JI Hongqiao Zhongshan West Road is 4 km from Shanghai Library and 5 km from Xintiandi. Lujiazui is about 12 km away. </p>";
-    // XI_html+="<p class='map_info'>Changning is a great choice for travelers interested in nightlife, culturally diverse food and food. </p>";
-    var data_info = [
-        [108.91710688088224, 34.1576051990611, XI_html]
-    ];
-    var opts = {
-        width: 280,
-        overflow: "hidden",
-        title: "<h4>LOCATION</h4>",
-        enableMessage: true
-    };
-    for (var i = 0; i < data_info.length; i++) {
-        var marker = new BMap.Marker(new BMap.Point(data_info[i][0], data_info[i][1]), {icon: myIcon});  // 创建标注
-        var content = data_info[i][2];
-        map1.addOverlay(marker);               // 将标注添加到地图中
-        addClickHandler(content, marker);
-    }
-
-    function addClickHandler(content, marker) {
-        marker.addEventListener("click", function (e) {
-                openInfo(content, e)
-            }
-        );
-    }
-
-    function openInfo(content, e) {
-        var p = e.target;
-        var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
-        var infoWindow = new BMap.InfoWindow(content, opts);  // 创建信息窗口对象
-        map1.openInfoWindow(infoWindow, point); //开启信息窗口
-    }
+//     function openInfo(content, e) {
+//         var p = e.target;
+//         var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+//         var infoWindow = new BMap.InfoWindow(content, opts);  // 创建信息窗口对象
+//         map1.openInfoWindow(infoWindow, point); //开启信息窗口
+//     }
+// }
 
 
-}
+// function showMap1() {
+//     var point2 = new BMap.Point(108.91710688088224, 34.1576051990611);
+//     var map1 = new BMap.Map("schoolmap1");
+//     map1.centerAndZoom(point2, 16);
+//     //map1.enableScrollWheelZoom(false);
+//     var myIcon = new BMap.Icon("images/ding.png", new BMap.Size(100, 55));
+//     var mk1 = new BMap.Marker(point2, {icon: myIcon});
+//     // map1.addOverlay(mk1);
+//     map1.panTo(point2);
+//     map1.centerAndZoom(point2, 16);
+//     var top_left_control1 = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+//     var top_left_navigation1 = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+//     map1.addControl(top_left_control1);
+//     map1.addControl(top_left_navigation1);
+//     // map1.enableScrollWheelZoom(false);     //开启鼠标滚轮缩放 false关闭
+//     // map1.addControl(new BMap.OverviewMapControl());  //显示缩略图
+//     // 
+//     //缩略图
+//     var mapType1 = new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP]});
+//     var mapType2 = new BMap.MapTypeControl({anchor: BMAP_ANCHOR_TOP_LEFT});
+//     var overView = new BMap.OverviewMapControl();
+//     var overViewOpen = new BMap.OverviewMapControl({isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT});
+
+//     map1.addControl(mapType1);          //2D图，卫星图
+//     map1.addControl(mapType2);          //左上角，默认地图控件
+//     map1.setCurrentCity("西安");        //由于有3D图，需要设置城市哦
+//     map1.addControl(overView);          //添加默认缩略地图控件
+//     map1.addControl(overViewOpen);      //右下角，打开
+//     function show() {
+//         $(".location-hotel").show();
+//     }
+
+//     function hide() {
+//         $(".location-hotel").hide();
+//     }
+
+//     mk1.addEventListener("mouseover", show);
+//     mk1.addEventListener("mouseout", hide);
+//     //多个文字弹窗
+//     var JI_html = "<p class='map_info'>JI HOTEL Shanghai Hongqiao Zhongshan West Road </p> <p class='map_info'>Location：No.908 Zhongshan West Road, Changning, Shanghai,China</p><p class='map_info'> Contact： +86 21 5289 1395</p>";
+//     // JI_html+="<p class='map_info'>Shanghai Xi Tianyou Hotel is located in Hongqiao’s Development Zone inside Donghua University campus, a 15-minute drive from Hongqiao Airport. Various dining and shopping options are available nearby. Rooms at Shanghai Xi Tianyou Hotel come with modern décor and large windows. Each room is fitted with a TV and wired internet. Shanghai Xi Tianyou Hotel is 4 km from the Shanghai Exhibition centre and 12 km from Shanghai Railway Station. </p>";
+//     // JI_html+="<p class='map_info'>This property is also rated for the best value in Shanghai! Guests are getting more for their money when compared to other properties in this city.</p>";
+//     var XI_html = "<p class='map_info'>SHANGHAI XI TIANYOU HOTEL</p> <p class='map_info'>Location: No.827, Zhongshan West Road, Changning, Shanghai, China </p><p class='map_info'> Contact:  +86 21 6219 1100</p>";
+//     // XI_html+="<p class='map_info'>JI Hotel Shanghai Hongqiao Zhongshan West Road is situated in Shanghai, 10 km from Hongqiao Airport and Hongqiao Railway Station. The non-smoking property features an on-site restaurant. Free WiFi throughout the property.</p>";
+//     // XI_html+="<p class='map_info'>Each room comes with a flat-screen TV with cable and satellite channels, ironing facilities and bottles of water. The attached bathroom has shower facilities and free toiletries. A hairdryer is available.</p>";
+//     // XI_html+="<p class='map_info'>There is a 24-hour front desk and shops at the property. Fax, printing and copying facilities are available at the business centre.</p>";
+//     // XI_html+="<p class='map_info'>JI Hongqiao Zhongshan West Road is 4 km from Shanghai Library and 5 km from Xintiandi. Lujiazui is about 12 km away. </p>";
+//     // XI_html+="<p class='map_info'>Changning is a great choice for travelers interested in nightlife, culturally diverse food and food. </p>";
+//     var data_info = [
+//         [108.91710688088224, 34.1576051990611, XI_html]
+//     ];
+//     var opts = {
+//         width: 280,
+//         overflow: "hidden",
+//         title: "<h4>LOCATION</h4>",
+//         enableMessage: true
+//     };
+//     for (var i = 0; i < data_info.length; i++) {
+//         var marker = new BMap.Marker(new BMap.Point(data_info[i][0], data_info[i][1]), {icon: myIcon});  // 创建标注
+//         var content = data_info[i][2];
+//         map1.addOverlay(marker);               // 将标注添加到地图中
+//         addClickHandler(content, marker);
+//     }
+
+//     function addClickHandler(content, marker) {
+//         marker.addEventListener("click", function (e) {
+//                 openInfo(content, e)
+//             }
+//         );
+//     }
+
+//     function openInfo(content, e) {
+//         var p = e.target;
+//         var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+//         var infoWindow = new BMap.InfoWindow(content, opts);  // 创建信息窗口对象
+//         map1.openInfoWindow(infoWindow, point); //开启信息窗口
+//     }
+
+
+// }
 
 function showDialog(people) {
     if (people == '1') {
@@ -401,18 +401,18 @@ function showDialog(people) {
 //     $('.auditPartner').modal('show');
 // }
 
-function getCurrentPosition() {
-    var geolocation = new BMap.Geolocation();
-    geolocation.getCurrentPosition(function (r) {
-        if (this.getStatus() == BMAP_STATUS_SUCCESS) {
-            curPoint = r.point;
-            showMap();
-            showMap1();
-        } else {
-            //alert('failed'+this.getStatus());
-        }
-    }, {enableHighAccuracy: true});
-}
+// function getCurrentPosition() {
+//     var geolocation = new BMap.Geolocation();
+//     geolocation.getCurrentPosition(function (r) {
+//         if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+//             curPoint = r.point;
+//             showMap();
+//             showMap1();
+//         } else {
+//             //alert('failed'+this.getStatus());
+//         }
+//     }, {enableHighAccuracy: true});
+// }
 
 function hotel(num) {
     if (num == '1') {
