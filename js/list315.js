@@ -350,10 +350,19 @@ function showDialog(people) {
         $(".modal-title").html('Xiandong Meng');
         $(".modal-body").html('<p class="about">Xiandong Meng is the senior software architect responsible for the IBM Cloud Manager with OpenStack product development. He has many years of product development & customer engagement experience in the datacenter and cloud management area. He joined IBM after he received the Master’s degree from department of Computer Science & Technology, Tsinghua University in 2004.</p>');
     } else if (people == '6') {
-        $(".modal-title").html('Larry Liu');
-        $(".modal-body").html('<p class="about">Larry Liu is responsible for product development and delivery of Sponge big data offerings. Before co-founded Sponge, he served as product manager in Couchbase leading innovations in the areas of NoSQL database systems and mobile products. Previously, he was product manager in Hortonworks responsible for hadoop core innovation and hadoop for Microsoft and Teradata integration. Previously in his career, Larry has held technical and management positions at Yahoo and CollabNet, in addition to couple of start ups including MedEngage and iArchitects. Larry holds a MS in Computer Science from California State University.</p>');
+        $(".modal-title").html('Keqiu Li');
+        $(".modal-body").html('<p style="font-size:20px;font-weight:bold;">Biography</p> ' +
+            '' +
+            '<p class="about">' +
+            'Keqiu Li is a professor at the College of Intelligence and Computing, Tianjin University, China. His research areas include mobile computing, block chain, and cloud computing. He is an IEEE Fellow.' +
+            '</p>' +
+            '<p style="font-size:24px;font-weight:bold;text-align: justify;">Title: Software Stack for Serverless Computing</p>' +
+            '<p style="font-size:20px;font-weight:bold;">Abstract: </p>' +
+            '<p class="about"> ' +
+            'Due to its resource management-free, auto-scaling and cost efficiency advantages, serverless computing has been a success in multiple areas, e.g., web services, IoT monitoring applications, entertainment. In order to ensure the performance of small-sized and short-lived function applications, the serverless software stack has to be carefully designed. In this report, we will discuss the current research on serverless computing system software and discuss technique trends.' +
+            '</p>');
     } else if (people == '7') {
-        $(".modal-title").html('Yunhuai Liu ');
+        $(".modal-title").html('Yunhuai Liu');
         $(".modal-body").html('<p style="font-size:20px;font-weight:bold;">Biography</p> ' +
             '' +
             '<p class="about">' +
